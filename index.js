@@ -59,9 +59,15 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function animalNames(animalArray){
+    let nameArray = [];
+    animalArray.forEach(function(item){
+      nameArray.push(`name: ${item.animal_name}, scientific: ${item.scientific_name}`)
+    });
+    return nameArray;
   }
+
+  // console.log(animalNames(zooAnimals))
   
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
@@ -70,9 +76,14 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowerCaseNames(animalArray){ 
+    const newArray = animalArray.map(function(item){
+      return item.animal_name.toLowerCase();
+    });
+    return newArray;
   }
+
+  // console.log(lowerCaseNames(zooAnimals))
   
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
@@ -80,10 +91,14 @@ const zooAnimals = [
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(animalArray){
+    const lowPop = animalArray.filter(function(item){
+     return item.population <5;
+    });
+    return lowPop;
   }
   
+  // console.log(lowPopulationAnimals(zooAnimals))
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
   The zoo needs to know their total animal population across the United States. 
@@ -91,11 +106,15 @@ const zooAnimals = [
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+  function USApop(animalArray){
+    const totalPop = animalArray.reduce(function(acc,item){
+      return acc + item.population;
+    },0);
+    return totalPop;
   }
   
-  
+  // console.log(USApop(zooAnimals))
+
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
     * Use the higher-order function consume with 3 parameters: a, b and cb
