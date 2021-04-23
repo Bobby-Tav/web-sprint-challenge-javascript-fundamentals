@@ -17,7 +17,7 @@ myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-
+//The reason that the nestedFunction can access the variable 'internal' is because that function is inside of the function that has that variable. So because of that the nestedFunction can go out of it's scope and go out one level cause of closure and get that variable.
 
 
 
@@ -28,9 +28,12 @@ myFunction();
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
+function summation(num) {
+  let sum = 0;
+  for(let i = num; i > 0;i--){
+    sum += i;
+  }
+  return sum;
   }
  
 
