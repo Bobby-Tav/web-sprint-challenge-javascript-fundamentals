@@ -66,7 +66,6 @@ const zooAnimals = [
     });
     return nameArray;
   }
-
   // console.log(animalNames(zooAnimals))
   
 
